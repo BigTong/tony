@@ -4,14 +4,20 @@
 #include <string>
 
 #include "thirdparty/gtest/gtest.h"
-#include "tony/leet_code/reverse_string.h"
+#include "tony/leet_code/leet_solution.h"
 
 namespace tony {
 
 TEST(LeetCodeUnittest, ReverseString) {
-  ReverseString reverse_string;
+  Solution solution;
+
+  // reverse string
   std::string test("abcdefg");
-  reverse_string.ReverseWords(&test);
+  solution.ReverseWords(&test);
   EXPECT_EQ(test, "gfedcba");
+
+  // max product
+  int a[] = {2,3,-2,4};
+  EXPECT_EQ(solution.MaxProduct(a, 4), 6);
 }
 }

@@ -1,6 +1,6 @@
-cc_library( name = 'leet_code_solution',
+cc_library( name = 'leet_solution',
           srcs = [
-                  'reverse_string.cc',
+                  'leet_solution.cc',
                   ],
           deps = [
                   '//base:base',
@@ -12,6 +12,6 @@ cc_test(name = 'leet_solution_test',
                   'leet_solution_test.cc',
                  ],
           deps = [
-                  ":leet_code_solution",
+                  ":leet_solution",
                  ],
           )
