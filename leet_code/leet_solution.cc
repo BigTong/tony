@@ -1,5 +1,5 @@
 // Copyright 2014-10-15 The Tony Authors. All Rights Reserved.
-// Author: rentong_zhang@staff.easou.com (Rentong Zhang)
+// Author: rentongzh@gmail.com (Rentong Zhang)
 
 #include <limits>
 
@@ -55,5 +55,4 @@ int Solution::MaxProduct(int array[], int len) {
 
   return max;
 }
-
 }
