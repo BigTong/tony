@@ -50,6 +50,9 @@ int Solution::MaxProduct(int array[], int len) {
     } else {
       negtive_min = 0;
       positive_max = 0;
+      if (positive_max > max) {
+        max =  positive_max;
+      }
     }
   }
 
