@@ -17,7 +17,10 @@ TEST(LeetCodeUnittest, ReverseString) {
   EXPECT_EQ(test, "gfedcba");
 
   // max product
-  int a[] = {2,3,-2,4};
-  EXPECT_EQ(solution.MaxProduct(a, 4), 6);
+  int a[] = {-2, 0, -2, 4};
+  EXPECT_EQ(solution.MaxProduct(a, 4), 4);
+
+  int b[] = {-5, 6,-4, -1, 0, 5, 7};
+  EXPECT_EQ(solution.MaxProduct(b, 7), 120);
 }
 }

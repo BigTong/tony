@@ -26,7 +26,6 @@ int Solution::MaxProduct(int array[], int len) {
     return std::numeric_limits<int>::min();
   }
 
-
   int negtive_min = array[0];
   int positive_max = array[0];
   int max = array[0];
@@ -34,8 +33,13 @@ int Solution::MaxProduct(int array[], int len) {
   int tmp;
   for (int i = 1; i != len; i++) {
     if (array[i] > 0) {
-       negtive_min *= array[i];
-       positive_max *= array[i];
+      negtive_min *= array[i];
+      positive_max *= array[i];
+
+      if (negtive_min == positive_max) {
+        positive_max = array[i];
+      }
+
       if (positive_max > max) {
         max =  positive_max;
       }
@@ -44,12 +48,22 @@ int Solution::MaxProduct(int array[], int len) {
       negtive_min = positive_max * array[i];
       positive_max = tmp * array[i];
 
+      if (negtive_min == positive_max) {
+        negtive_min = array[i];
+      }
+
       if (positive_max > max) {
         max = positive_max;
       }
     } else {
-      negtive_min = 0;
-      positive_max = 0;
+      negtive_min = array[i+1];
+      positive_max = array[i+1];
+      i++;
+
+      if (0 > max) {
+        max = 0;
+      }
+
       if (positive_max > max) {
         max =  positive_max;
       }
