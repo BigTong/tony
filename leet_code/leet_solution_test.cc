@@ -2,6 +2,7 @@
 // Author: rentong_zhang@staff.easou.com (Rentong Zhang)
 
 #include <string>
+#include <vector>
 
 #include "thirdparty/gtest/gtest.h"
 #include "tony/leet_code/leet_solution.h"
@@ -22,5 +23,9 @@ TEST(LeetCodeUnittest, ReverseString) {
 
   int b[] = {-5, 6,-4, -1, 0, 5, 7};
   EXPECT_EQ(solution.MaxProduct(b, 7), 120);
+
+  int tmp[] = {4,5,6,7,-2,-1,0,0,0,1,2};
+  std::vector<int> data(tmp, tmp+10);
+  EXPECT_EQ(solution.FindMin(data), 0);
 }
 }

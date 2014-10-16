@@ -1,9 +1,9 @@
 // Copyright 2014-10-15 The Tony Authors. All Rights Reserved.
 // Author: rentongzh@gmail.com (Rentong Zhang)
 
-#include <limits>
-
 #include "tony/leet_code/leet_solution.h"
+
+#include <limits>
 
 namespace tony {
 
@@ -71,5 +71,27 @@ int Solution::MaxProduct(int array[], int len) {
   }
 
   return max;
+}
+
+int Solution::FindMin(const std::vector<int>& data) {
+  if (data.size() == 0) {
+    return std::numeric_limits<int>::min();
+  }
+
+  size_t left_index = 0;
+  size_t right_index = data.size() - 1;
+  size_t mid_index = 0;
+
+  while (left_index < right_index) {
+    mid_index = left_index + ((right_index - left_index) >> 1);
+    if (data[left_index] <= data[mid_index] &&
+        data[left_index] > data[right_index]) {
+      left_index = mid_index + 1;
+    } else {
+      right_index = mid_index;
+    }
+  }
+
+  return data[left_index];
 }
 }

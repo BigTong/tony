@@ -4,5 +4,6 @@
 cc_library(name = 'base',
            srcs = [
                    'kmp.cc',
+                   'logging.cc',
                   ],
           )
